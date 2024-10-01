@@ -76,14 +76,14 @@ class Bibliothèque:
     def returnbook():
         name = input("Entrez votre nom pour rendre un livre : ")
 
-        # Vérifier si la personne a un livre emprunté
+        
         for emprunt in Emprunts:
             if emprunt['nom'] == name:
                 print(f"{name} a rendu le livre '{emprunt['livre']}'.")
-                Shelves.append(emprunt['livre'])  # Remettre le livre sur les étagères
-                Emprunts.remove(emprunt)  # Supprimer l'emprunt
-                save_data(SHELVES_FILE, Shelves)  # Sauvegarde des étagères
-                save_data(EMPRUNTS_FILE, Emprunts)  # Sauvegarde des emprunts
+                Shelves.append(emprunt['livre'])  
+                Emprunts.remove(emprunt)  
+                save_data(SHELVES_FILE, Shelves) 
+                save_data(EMPRUNTS_FILE, Emprunts)  
                 return
 
         print(f"{name}, vous n'avez emprunté aucun livre.")
